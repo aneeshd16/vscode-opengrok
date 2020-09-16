@@ -20,7 +20,7 @@ function getFileUrlPart() {
 	const rootPath = vscode.workspace.rootPath;
 	const fileName = vscode.window.activeTextEditor.document.fileName;
 	const relativeFilePath = fileName.split(rootPath)[1];
-	const line = vscode.window.activeTextEditor.selection.active.line;
+	const line = vscode.window.activeTextEditor.selection.active.line + 1;
 	return `${relativeFilePath}#${line}`;
 }
 
