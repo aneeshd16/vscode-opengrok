@@ -13,11 +13,3 @@ This extension contributes the following settings:
 
 * `openGrok.serverSettings.rootUrl`: Root URL at which the OpenGrok installation can be accessed
 * `openGrok.serverSettings.project`: Name of the project
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release
