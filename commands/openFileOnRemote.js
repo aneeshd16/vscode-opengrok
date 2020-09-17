@@ -1,4 +1,4 @@
-const { workspace, window, env, Uri} = require('vscode');
+const { workspace, window, env, Uri } = require('vscode');
 const { getConfiguration } = require('../common');
 
 function getOpenGrokUrlPartFromConfiguration() {
@@ -18,14 +18,12 @@ function getFileUrlPart() {
 }
 
 const openFileOnRemote = function () {
-    const openGrokUrlPart = getOpenGrokUrlPartFromConfiguration();
-    const fileUrlPart = getFileUrlPart();
+	const openGrokUrlPart = getOpenGrokUrlPartFromConfiguration();
+	const fileUrlPart = getFileUrlPart();
 
-    if (fileUrlPart) {
-        env.openExternal(
-            Uri.parse(openGrokUrlPart + fileUrlPart)
-        );
-    }
-}
+	if (fileUrlPart) {
+		env.openExternal(Uri.parse(openGrokUrlPart + fileUrlPart));
+	}
+};
 
 module.exports = openFileOnRemote;

@@ -2,13 +2,20 @@ const { window, env, Uri } = require('vscode');
 const { getConfiguration } = require('../common');
 
 const search = async function () {
+	const editor = window.activeTextEditor;
+	let selectedText = editor.selection.isSingleLine
+		? editor.document.getText(editor.selection)
+		: '';
 	const result = await window.showInputBox({
-		value: '',
+		value: selectedText || '',
 		placeHolder: 'Enter text to search',
 		validateInput: (text) => {
 			return text ? null : 'Please enter a string';
 		},
 	});
+	if (!result) {
+		return;
+	}
 	const { rootUrl, project } = getConfiguration();
 	const searchUrl = `${rootUrl}/source/search?project=${encodeURIComponent(
 		project

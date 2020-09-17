@@ -1,3 +1,3 @@
 module.exports = {
-    getConfiguration: require('./getConfiguration')
-}
+	getConfiguration: require('./getConfiguration'),
+};
