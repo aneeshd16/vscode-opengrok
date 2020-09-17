@@ -15,14 +15,21 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:vscode-opengrok.openFileOnRemote"
+		"onCommand:vscode-opengrok.openFileOnRemote",
+		"onCommand:vscode-opengrok.search"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "vscode-opengrok.openFileOnRemote",
-				"title": "OpenGrok: Open File on Remote"
+				"title": "OpenGrok: Open File on Remote",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "vscode-opengrok.search",
+				"title": "OpenGrok: Search for text",
+				"when": "editorTextFocus"
 			}
 		],
 		"configuration": {
@@ -30,12 +37,15 @@
 			"properties": {
 				"openGrok.serverSettings.rootUrl": {
 					"type": "string",
+					"format": "uri",
 					"default": "",
+					"scope": "window",
 					"description": "Root URL at which the OpenGrok installation can be accessed"
 				},
 				"openGrok.serverSettings.project": {
 					"type": "string",
 					"default": "trunk",
+					"scope": "window",
 					"description": "Name of the project"
 				}
 			}
