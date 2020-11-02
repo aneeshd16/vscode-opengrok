@@ -7,7 +7,7 @@
 ## Features
 
 * Open file with line reference in your browser.
-* Search your codebase with OpenGrok - Coming soon.
+* Search your codebase with OpenGrok.
 
 ## Extension Settings
 
