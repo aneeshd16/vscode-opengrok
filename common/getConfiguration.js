@@ -1,7 +1,7 @@
 const { workspace } = require('vscode');
 
 const getConfiguration = function () {
-	const { rootUrl, project } = workspace.getConfiguration(
+	let { rootUrl, project, folderName } = workspace.getConfiguration(
 		'openGrok'
 	).serverSettings;
 	if (!rootUrl) {
@@ -10,6 +10,9 @@ const getConfiguration = function () {
 	if (!project) {
 		throw new Error('Project name not configured');
 	}
-	return { rootUrl, project };
+	if (!folderName) {
+		folderName = 'source';
+	}
+	return { rootUrl, project, folderName };
 };
 module.exports = getConfiguration;

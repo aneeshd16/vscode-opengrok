@@ -2,8 +2,8 @@ const { workspace, window, env, Uri } = require('vscode');
 const { getConfiguration } = require('../common');
 
 function getOpenGrokUrlPartFromConfiguration() {
-	const { rootUrl, project } = getConfiguration();
-	return `${rootUrl}/source/xref/${project}`;
+	const { rootUrl, project, folderName } = getConfiguration();
+	return `${rootUrl}/${folderName}/xref/${project}`;
 }
 
 function getFileUrlPart() {

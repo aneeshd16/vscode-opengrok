@@ -47,6 +47,12 @@
 					"default": "trunk",
 					"scope": "window",
 					"description": "Name of the project"
+				},
+				"openGrok.serverSettings.folderName": {
+					"type": "string",
+					"default": "source",
+					"scope": "window",
+					"description": "Name of the folder"
 				}
 			}
 		}

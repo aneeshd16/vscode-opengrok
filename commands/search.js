@@ -16,8 +16,8 @@ const search = async function () {
 	if (!result) {
 		return;
 	}
-	const { rootUrl, project } = getConfiguration();
-	const searchUrl = `${rootUrl}/source/search?project=${encodeURIComponent(
+	const { rootUrl, project, folderName } = getConfiguration();
+	const searchUrl = `${rootUrl}/${folderName}/search?project=${encodeURIComponent(
 		project
 	)}&q=${encodeURIComponent(result)}`;
 	env.openExternal(Uri.parse(searchUrl));
